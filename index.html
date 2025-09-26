@@ -1,0 +1,184 @@
+<!-- 
+  Engdelve Archive Homepage
+  Design & Development: Ahmad Zaman Huri
+  Contact: ahmadzamanhuri.jakfar@gmail.com
+-->
+
+<link href="https://fonts.googleapis.com/css2?family=Droid+Sans&display=swap" rel="stylesheet">
+
+<div class="engdelve-archive">
+  <h1>📚 Engdelve Archive</h1>
+  <p class="intro">
+    A growing collection of English teaching resources — simple, open, and free to use.  
+    Choose your grade below and start exploring.
+  </p>
+
+  <div class="class-links">
+    <a href="https://sites.google.com/view/engdelve-archive/kelas-8" class="btn">📘 Explore Grade 8</a>
+    <a href="https://sites.google.com/view/engdelve-archive/kelas-9" class="btn">📗 Explore Grade 9</a>
+  </div>
+
+  <div class="note">
+    <p><b>Note:</b> If you encounter broken files or links, please report them through the contact section.</p>
+  </div>
+
+  <blockquote class="quote">
+    "Knowledge grows when it is shared." 🌱
+  </blockquote>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>© 2025 <b>Engdelve</b>. English Deeper • Deliver Better</p>
+  <p class="author">Ahmad Zaman Huri</p>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/62XXXXXXXXXX?text=Hi,%20I%20found%20a%20broken%20file%20or%20link%20on%20Engdelve%20Archive.%20Details:" 
+   class="wa-float" target="_blank">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<style>
+  /* Engdelve Archive Style */
+  body {
+    background: #d5e4d9;
+  }
+
+  .engdelve-archive {
+    font-family: 'Droid Sans', sans-serif;
+    color: #2c2c2c;
+    max-width: 850px;
+    margin: auto;
+    padding: 25px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .engdelve-archive h1 {
+    color: #647c74;
+    margin-bottom: 15px;
+    font-size: 2em;
+  }
+
+  .engdelve-archive .intro {
+    font-size: 1.05em;
+    margin-bottom: 25px;
+  }
+
+  .engdelve-archive .class-links {
+    margin: 25px 0;
+  }
+
+  .engdelve-archive .btn {
+    display: inline-block;
+    margin: 12px;
+    padding: 14px 28px;
+    background: #647c74;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 1.05em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    animation: pulse 2s infinite;
+  }
+
+  /* Pulse effect */
+  @keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(100,124,116,0.4); }
+    50% { transform: scale(1.03); box-shadow: 0 0 20px rgba(100,124,116,0.6); }
+    100% { transform: scale(1); box-shadow: 0 0 0 rgba(100,124,116,0.4); }
+  }
+
+  .engdelve-archive .btn:hover {
+    animation: none; /* stop pulse on hover */
+    background: linear-gradient(135deg, #647c74, #88a097);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  }
+
+  .engdelve-archive .note {
+    background: #c6d8cc;
+    border-left: 5px solid #647c74;
+    padding: 12px 15px;
+    font-size: 0.95em;
+    margin: 25px auto;
+    max-width: 600px;
+    border-radius: 6px;
+    text-align: left;
+  }
+
+  .engdelve-archive .quote {
+    margin-top: 25px;
+    font-style: italic;
+    color: #4e625c;
+    font-size: 1em;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 35px;
+    padding: 15px 10px;
+    font-size: 0.95em;
+    color: #444;
+    border-top: 1px solid #bbb;
+  }
+
+  .footer b {
+    color: #647c74;
+  }
+
+  .footer .author {
+    color: #647c74;
+    opacity: 0.5;
+    margin-top: 5px;
+    font-size: 0.9em;
+    transition: opacity 0.3s ease;
+  }
+
+  .footer .author:hover {
+    opacity: 1;
+  }
+
+  /* Floating WhatsApp button */
+  .wa-float {
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+
+  .wa-float:hover {
+    transform: scale(1.1);
+  }
+
+  .wa-float img {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Responsiveness */
+  @media (max-width: 600px) {
+    .engdelve-archive h1 {
+      font-size: 1.6em;
+    }
+    .engdelve-archive .btn {
+      width: 90%;
+      margin: 10px auto;
+      display: block;
+    }
+  }
+</style>

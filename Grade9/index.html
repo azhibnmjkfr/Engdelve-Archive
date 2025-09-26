@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- 
+  Engdelve Archive Homepage - Grade 9
+  Design & Development: Ahmad Zaman Huri
+  Contact: ahmadzamanhuri.jakfar@gmail.com
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engdelve Archive - Grade 9</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Droid+Sans&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Droid Sans', sans-serif;
+      background-color: #d5e4d9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #647c74;
+      margin-bottom: 0.5rem;
+    }
+
+    p.intro {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 2rem;
+      max-width: 700px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      min-height: 220px;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+      color: #647c74;
+      margin-bottom: 0.8rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+      flex: 1;
+      margin-bottom: 1.2rem;
+    }
+
+    .btn {
+      background-color: #647c74;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #647c74, #88a097);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .quote {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: #4e625c;
+      font-style: italic;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    footer span {
+      color: #647c74;
+      opacity: 0.9;
+    }
+
+    footer .author {
+      display: block;
+      color: #647c74;
+      opacity: 0.6;
+      font-size: 0.8rem;
+      margin-top: 0.2rem;
+    }
+
+    /* Floating Translate Button */
+    #translateBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #647c74;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    #translateBtn:hover {
+      background-color: #88a097;
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    @media (max-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 data-en="Grade 9 Resources" data-id="Sumber Belajar Kelas 9">Grade 9 Resources</h1>
+    <p class="intro" data-en="Carefully curated for Grade 9 SMP/MTs, this collection from Erlangga ensures continuity in English learning, building on previous grade foundations." data-id="Disusun dengan cermat untuk kelas 9 SMP/MTs, koleksi dari Erlangga ini memastikan kelanjutan pembelajaran bahasa Inggris, sesuai fondasi kelas sebelumnya.">
+      Carefully curated for Grade 9 SMP/MTs, this collection from <strong>Erlangga</strong> ensures continuity in English learning, building on previous grade foundations.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h2 data-en="K13N" data-id="K13N">K13N</h2>
+        <p data-en="The 2013 Curriculum (K13N) strengthens critical thinking, structured language practice, and deeper communication skills." data-id="Kurikulum 2013 (K13N) memperkuat berpikir kritis, latihan bahasa yang terstruktur, dan kemampuan komunikasi yang lebih mendalam.">
+          The 2013 Curriculum (K13N) strengthens critical thinking, structured language practice, and deeper communication skills.
+        </p>
+        <a href="https://sites.google.com/view/engdelve-archive/kelas-9/k13n" class="btn" data-en="Explore K13N" data-id="Jelajahi K13N">Explore K13N</a>
+      </div>
+
+      <div class="card">
+        <h2 data-en="Kurikulum Merdeka" data-id="Kurikulum Merdeka">Kurikulum Merdeka</h2>
+        <p data-en="KM emphasizes independent learning and collaborative projects, encouraging student engagement and creativity." data-id="KM menekankan pembelajaran mandiri dan proyek kolaboratif, mendorong keterlibatan dan kreativitas siswa.">
+          KM emphasizes independent learning and collaborative projects, encouraging student engagement and creativity.
+        </p>
+        <a href="https://sites.google.com/view/engdelve-archive/kelas-9/kurikulum-merdeka" class="btn" data-en="Explore KM" data-id="Jelajahi KM">Explore KM</a>
+      </div>
+
+      <div class="card">
+        <h2 data-en="KM Revisi" data-id="KM Revisi">KM Revisi</h2>
+        <p data-en="KM Revisi provides refined learning pathways, clearer objectives, and practical exercises aligned with classroom needs." data-id="KM Revisi menyediakan jalur pembelajaran yang disempurnakan, tujuan yang lebih jelas, dan latihan praktis sesuai kebutuhan kelas.">
+          KM Revisi provides refined learning pathways, clearer objectives, and practical exercises aligned with classroom needs.
+        </p>
+        <a href="https://sites.google.com/view/engdelve-archive/kelas-9/kurikulum-merdeka-revisi" class="btn" data-en="Explore KM Revisi" data-id="Jelajahi KM Revisi">Explore KM Revisi</a>
+      </div>
+
+      <div class="card">
+        <h2 data-en="Standard CEFR" data-id="Standar CEFR">Standard CEFR</h2>
+        <p data-en="CEFR standards for Grade 9 guide students toward international benchmarks of English proficiency and communication." data-id="Standar CEFR untuk kelas 9 membimbing siswa menuju tolok ukur internasional kemampuan bahasa Inggris dan komunikasi.">
+          CEFR standards for Grade 9 guide students toward international benchmarks of English proficiency and communication.
+        </p>
+        <a href="https://sites.google.com/view/engdelve-archive/kelas-9/standard-cefr" class="btn" data-en="Explore CEFR" data-id="Jelajahi CEFR">Explore CEFR</a>
+      </div>
+    </div>
+
+    <blockquote class="quote" data-en="Knowledge is a treasure, but curiosity is the key that unlocks it." data-id="Pengetahuan adalah harta, tetapi rasa ingin tahu adalah kunci yang membukanya.">
+      "Knowledge is a treasure, but curiosity is the key that unlocks it." 🔑
+    </blockquote>
+  </div>
+
+  <footer>
+    © 2025 <span>Engdelve</span>. English Deeper • Deliver Better
+    <span class="author">Ahmad Zaman Huri</span>
+  </footer>
+
+  <!-- Floating Translate Button -->
+  <button id="translateBtn">ID</button>
+
+  <script>
+    const translateBtn = document.getElementById('translateBtn');
+    let lang = 'en'; // default English
+
+    translateBtn.addEventListener('click', () => {
+      lang = lang === 'en' ? 'id' : 'en';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.innerText = el.getAttribute(`data-${lang}`);
+      });
+    });
+  </script>
+</body>
+</html>

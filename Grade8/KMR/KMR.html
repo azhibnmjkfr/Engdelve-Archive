@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- 
+  Engdelve Archive - Grade 8 Kurikulum Merdeka Revisi
+  Design & Development: Ahmad Zaman Huri
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade 8 - Kurikulum Merdeka Revision</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #d5e4d9; /* Ciri khas Engdelve Arsip */
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background: transparent;
+    }
+    h1 {
+      color: #5b2c83; /* Ungu tua */
+      font-size: 2em;
+      margin: 0;
+    }
+    .intro {
+      text-align: center;
+      margin: 15px;
+      font-size: 1.1em;
+      color: #333;
+    }
+    .content {
+      display: flex;
+      justify-content: center;
+      margin: 40px 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      font-size: 1.1em;
+      color: white;
+      background-color: #5b2c83;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #471f66;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: transparent;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #555;
+    }
+    /* Floating Translate Button */
+    .translate-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #5b2c83;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.2em;
+      cursor: pointer;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 data-translate="title">Grade 8 - Kurikulum Merdeka Revision</h1>
+  </header>
+  <p class="intro" data-translate="intro">
+    Erlangga provides the revised Kurikulum Merdeka edition to support English learning.
+  </p>
+
+  <div class="content">
+    <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafybeibbjhov2pv65khj6i7uo7ulxjt5q4i2z6zs2jk5qhi6ob7zmug55u" target="_blank" class="btn" data-translate="btn-bright">
+      📘 Bright an English
+    </a>
+  </div>
+
+  <footer>
+    <p>&copy; Engdelve Archive | Design by Ahmad Zaman Huri</p>
+  </footer>
+
+  <button class="translate-btn">🌐</button>
+
+  <script>
+    const translations = {
+      en: {
+        title: "Grade 8 - Kurikulum Merdeka Revision",
+        intro: "Erlangga provides the revised Kurikulum Merdeka edition to support English learning.",
+        "btn-bright": "📘 Bright an English"
+      },
+      id: {
+        title: "Kelas 8 - Kurikulum Merdeka Revisi",
+        intro: "Erlangga menyediakan edisi revisi Kurikulum Merdeka untuk mendukung pembelajaran bahasa Inggris.",
+        "btn-bright": "📘 Bright an English"
+      }
+    };
+
+    let isIndo = false; // default English
+    const translateBtn = document.querySelector(".translate-btn");
+    translateBtn.addEventListener("click", () => {
+      isIndo = !isIndo;
+      const lang = isIndo ? "id" : "en";
+      document.querySelectorAll("[data-translate]").forEach(el => {
+        const key = el.getAttribute("data-translate");
+        el.textContent = translations[lang][key];
+      });
+    });
+  </script>
+</body>
+</html>

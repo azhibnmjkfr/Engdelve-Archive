@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!-- 
+  Engdelve Archive - Grade 8 Standard CEFR
+  Design & Development: Ahmad Zaman Huri
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade 8 - Standard CEFR</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Droid+Sans&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Droid Sans', sans-serif;
+      background-color: #d5e4d9; /* Ciri khas Engdelve Arsip */
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #1e4a6c; /* Biru tua */
+      margin-bottom: 0.5rem;
+    }
+
+    p.intro {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    /* Wrapper 2 kolom */
+    .content-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    /* Kolom kiri = daftar toggle */
+    .toggle-list {
+      flex: 0 0 250px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .toggle-header {
+      background: #1e4a6c;
+      color: #fff;
+      padding: 0.7rem 1rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.3s;
+    }
+
+    .toggle-header:hover {
+      background: #163752;
+    }
+
+    /* Kolom kanan = konten toggle */
+    .toggle-content {
+      flex: 1;
+      display: none;
+      background: #d5e4d9;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .toggle-content.active {
+      display: block;
+    }
+
+    .toggle-content h3 {
+      margin-top: 0;
+      color: #1e4a6c;
+    }
+
+    .btn {
+      background-color: #1e4a6c;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      margin: 0.3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #163752;
+      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #555;
+      border-top: 1px solid #ccc;
+      background: #d5e4d9;
+    }
+
+    footer span {
+      color: #1e4a6c;
+      opacity: 0.9;
+    }
+
+    footer .author {
+      display: block;
+      color: #1e4a6c;
+      opacity: 0.6;
+      font-size: 0.8rem;
+      margin-top: 0.2rem;
+    }
+
+    /* Floating translate button */
+    .translate-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #1e4a6c;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    .translate-btn:hover {
+      transform: scale(1.1);
+      background-color: #163752;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="title" data-translate="title">Grade 8 - Standard CEFR</h1>
+    <p class="intro" id="intro" data-translate="intro">
+      Erlangga offers <strong>Standard CEFR</strong> edition for Grade 8 to strengthen English learning aligned with international standards. Click below to explore the available resources.
+    </p>
+
+    <div class="content-wrapper">
+      <!-- Kolom kiri -->
+      <div class="toggle-list">
+        <div class="toggle-header" data-target="interact">📘 Interact</div>
+      </div>
+
+      <!-- Kolom kanan -->
+      <div class="toggle-content" id="interact">
+        <h3>Interact</h3>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafkreibdv6nsjjxpvtmqd5dxdn2pxqhnltnsv5bhvwz64jyqwjicpxbxdm" target="_blank" class="btn" data-translate="btn-atp">ATP</a>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafybeihapglmqfdvrkd4vnchrdlyclelvi4qux6hemr3ccs5upb7nxhzja" target="_blank" class="btn" data-translate="btn-teachers-book">Teacher’s Book</a>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafkreiaoxw4367u7py7glgynenqhyccqnymfrpeybrspzudsnzwywwqehe" target="_blank" class="btn" data-translate="btn-answer-key">Answer Key</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 <span>Engdelve</span>. English Deeper • Deliver Better
+    <span class="author">Ahmad Zaman Huri</span>
+  </footer>
+
+  <!-- Floating translate button -->
+  <button id="translateBtn" class="translate-btn">🌐</button>
+
+  <script>
+    const headers = document.querySelectorAll('.toggle-header');
+    const contents = document.querySelectorAll('.toggle-content');
+    const translateBtn = document.getElementById('translateBtn');
+    let activeContent = null;
+    let autoCloseTimeout = null;
+    let isEnglish = true;
+
+    // Translation dictionary
+    const translations = {
+      'title': {
+        en: 'Grade 8 - Standard CEFR',
+        id: 'Kelas 8 - Standar CEFR'
+      },
+      'intro': {
+        en: 'Erlangga offers <strong>Standard CEFR</strong> edition for Grade 8 to strengthen English learning aligned with international standards. Click below to explore the available resources.',
+        id: 'Erlangga menyediakan edisi <strong>Standar CEFR</strong> untuk Kelas 8 guna memperkuat pembelajaran Bahasa Inggris sesuai standar internasional. Klik di bawah ini untuk melihat sumber yang tersedia.'
+      },
+      'btn-atp': {
+        en: 'ATP',
+        id: 'ATP'
+      },
+      'btn-teachers-book': {
+        en: "Teacher's Book",
+        id: 'Buku Guru'
+      },
+      'btn-answer-key': {
+        en: 'Answer Key',
+        id: 'Kunci Jawaban'
+      }
+    };
+
+    // Set default language = English
+    document.querySelectorAll('[data-translate]').forEach(element => {
+      const key = element.getAttribute('data-translate');
+      if (translations[key]) {
+        element.innerHTML = translations[key].en;
+      }
+    });
+
+    // Toggle functionality
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        const targetId = header.getAttribute('data-target');
+        const targetContent = document.getElementById(targetId);
+
+        contents.forEach(c => {
+          if (c !== targetContent) c.classList.remove('active');
+        });
+
+        if (targetContent.classList.contains('active')) {
+          targetContent.classList.remove('active');
+          activeContent = null;
+        } else {
+          targetContent.classList.add('active');
+          activeContent = targetContent;
+
+          clearTimeout(autoCloseTimeout);
+          autoCloseTimeout = setTimeout(() => {
+            if (activeContent && !activeContent.matches(':hover')) {
+              activeContent.classList.remove('active');
+              activeContent = null;
+            }
+          }, 10000);
+        }
+      });
+    });
+
+    contents.forEach(content => {
+      content.addEventListener('mouseenter', () => {
+        clearTimeout(autoCloseTimeout);
+      });
+      content.addEventListener('mouseleave', () => {
+        clearTimeout(autoCloseTimeout);
+        if (content.classList.contains('active')) {
+          autoCloseTimeout = setTimeout(() => {
+            content.classList.remove('active');
+            activeContent = null;
+          }, 10000);
+        }
+      });
+    });
+
+    // Translate toggle
+    translateBtn.addEventListener('click', () => {
+      isEnglish = !isEnglish;
+      const lang = isEnglish ? 'en' : 'id';
+
+      document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[key]) {
+          element.innerHTML = translations[key][lang];
+        }
+      });
+    });
+  </script>
+</body>
+</html>

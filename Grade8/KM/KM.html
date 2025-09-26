@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!-- 
+  Engdelve Archive - Grade 8 Kurikulum Merdeka
+  Design & Development: Ahmad Zaman Huri
+  Contact: ahmadzamanhuri.jakfar@gmail.com
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade 8 - Kurikulum Merdeka</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Droid+Sans&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Droid Sans', sans-serif;
+      background-color: #d5e4d9; /* hijau lembut */
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #a12b2b; /* merah lembut */
+      margin-bottom: 0.5rem;
+    }
+
+    p.intro {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    /* Wrapper 2 kolom */
+    .content-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    /* Kolom kiri = daftar toggle */
+    .toggle-list {
+      flex Snowden: flex: 0 0 250px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .toggle-header {
+      background: #d94c4c;
+      color: #fff;
+      padding: 0.7rem 1rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.3s;
+    }
+
+    .toggle-header:hover {
+      background: #b53a3a;
+    }
+
+    /* Kolom kanan = konten toggle */
+    .toggle-content {
+      flex: 1;
+      display: none;
+      background: #d5e4d9;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .toggle-content.active {
+      display: block;
+    }
+
+    .toggle-content h3 {
+      margin-top: 0;
+      color: #a12b2b;
+    }
+
+    .btn {
+      background-color: #a12b2b;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      margin: 0.3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #831f1f;
+      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #555;
+      border-top: 1px solid #ccc;
+      background: #d5e4d9;
+    }
+
+    footer span {
+      color: #a12b2b;
+      opacity: 0.9;
+    }
+
+    footer .author {
+      display: block;
+      color: #a12b2b;
+      opacity: 0.6;
+      font-size: 0.8rem;
+      margin-top: 0.2rem;
+    }
+
+    /* Floating translate button */
+    .translate-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #a12b2b;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    .translate-btn:hover {
+      transform: scale(1.1);
+      background-color: #831f1f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="title" data-translate="title">Grade 8 - Kurikulum Merdeka</h1>
+    <p class="intro" id="intro" data-translate="intro">
+      Erlangga provides several selected book series that, according to <strong>Engdelve</strong>, are deemed most suitable 
+      to support students’ knowledge in the Kurikulum Merdeka. Below is the selected collection.
+    </p>
+
+    <div class="content-wrapper">
+      <!-- Kolom kiri -->
+      <div class="toggle-list">
+        <div class="toggle-header" data-target="bright">📘 Bright an English</div>
+        <div class="toggle-header" data-target="bupena">📗 Bupena</div>
+        <div class="toggle-header" data-target="interact">📙 Interact</div>
+        <div class="toggle-header" data-target="wonderful">📒 Wonderful Insight</div>
+      </div>
+
+      <!-- Kolom kanan -->
+      <div class="toggle-content" id="bright">
+        <h3>Bright an English</h3>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafybeic43674brxzagifxhlwrb4mlic5bleutp3my3svs5gznnn35tq5zu" target="_blank" class="btn" data-translate="btn-atp">ATP</a>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafybeibfujsmsugfp2gzxbpoqgg7uv3huonseijpd6e2l76qcgyywv244q" target="_blank" class="btn" data-translate="btn-foreign-audio">Foreign Audio</a>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafkreifycxtgsq6igkca6ga6bybmiep26oq2miwtmkzxmhhn77d235jquy" target="_blank" class="btn" data-translate="btn-answer-key">Answer Key</a>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafybeie2edjin2c5bvs533zvze5tfj6t7qofceadhhya7q5b3d45kel4xm" target="_blank" class="btn" data-translate="btn-listening-script">Listening Script</a>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafybeicobbfewfundxmceuxer65kzjoxwoqtjyc5gmsosyn6l5kuzctqti" target="_blank" class="btn" data-translate="btn-teaching-media">Teaching Media</a>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafybeieanyfngfiozrmyiuzut5whnklowvlhzg3ybdsf74maex6x5c7ym4" target="_blank" class="btn" data-translate="btn-teaching-module">Teaching Module</a>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafybeic2msyd5pzsui6d4mviucntmv5q7f4ishixpfo6se3rzfgrighera" target="_blank" class="btn" data-translate="btn-foreign-video">Foreign Language Video</a>
+      </div>
+
+      <div class="toggle-content" id="bupena">
+        <h3>Bupena</h3>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafybeieomryr2gi2fe4g7yki5apiz25ppdsxlg6ssvtoig5tqlzodcpzmi" target="_blank" class="btn" data-translate="btn-foreign-audio">Foreign Audio</a>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafkreigazpoxutyqanzexptr65fdggoiee6ezv5pz4vhbejwgkbz45qdii" target="_blank" class="btn" data-translate="btn-answer-key">Answer Key</a>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafkreih6wl3ubhjah27tquwtl5qhgmcga5eo64de5lrolvo7s2vut5nt6y" target="_blank" class="btn" data-translate="btn-listening-script">Listening Script</a>
+      </div>
+
+      <div class="toggle-content" id="interact">
+        <h3>Interact</h3>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafybeid4czvpoapss6tksqagf6ymtdwvuwrlyyywgxonnatawmqj5lix7i" target="_blank" class="btn" data-translate="btn-foreign-audio">Foreign Audio</a>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafkreid42nv24bka3ntewkkyv226qykkvvhec4r3putctbpadmb2q4hg6e" target="_blank" class="btn" data-translate="btn-answer-key">Answer Key</a>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafybeifmr6ybuypqxieu3delofcj6dzem5vgqcaxjg63uo5htqga6sutqa" target="_blank" class="btn" data-translate="btn-teaching-module">Teaching Module</a>
+      </div>
+
+      <div class="toggle-content" id="wonderful">
+        <h3>Wonderful Insight</h3>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafkreieyldmqeoionibvxefosrjle32ghnfcwsdb3pfag7bftnikpzvhim" target="_blank" class="btn" data-translate="btn-atp">ATP</a>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafybeiby3bnqyq5uw2cskxjerwk4vt35evs45iljpc6t4whrjkr2zl32jq" target="_blank" class="btn" data-translate="btn-foreign-audio">Foreign Audio</a>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafkreibdbscvxlnz3iksqdojszojg6rhghlqzeyr2pkahrwkmnxhgp63ie" target="_blank" class="btn" data-translate="btn-listening-script">Listening Script</a>
+        <a href="https://sapphire-neighbouring-chimpanzee-802.mypinata.cloud/ipfs/bafybeih3e2abfnfcepbqxw573kgpmhgbwnb6bufo55if64mvob6lah535a" target="_blank" class="btn" data-translate="btn-teaching-module">Teaching Module</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 <span>Engdelve</span>. English Deeper • Deliver Better
+    <span class="author">Ahmad Zaman Huri</span>
+  </footer>
+
+  <!-- Floating translate button -->
+  <button id="translateBtn" class="translate-btn">🌐</button>
+
+  <script>
+    const headers = document.querySelectorAll('.toggle-header');
+    const contents = document.querySelectorAll('.toggle-content');
+    const translateBtn = document.getElementById('translateBtn');
+    let activeContent = null;
+    let autoCloseTimeout = null;
+    let isEnglish = true; // Default language is English
+
+    // Translation dictionary
+    const translations = {
+      'title': {
+        en: 'Grade 8 - Kurikulum Merdeka',
+        id: 'Kelas 8 - Kurikulum Merdeka'
+      },
+      'intro': {
+        en: 'Erlangga provides several selected book series that, according to <strong>Engdelve</strong>, are deemed most suitable to support students’ knowledge in the Kurikulum Merdeka. Below is the selected collection.',
+        id: 'Erlangga menyediakan beberapa seri buku pilihan yang menurut <strong>Engdelve</strong> dinilai paling sesuai untuk mendukung pengetahuan siswa dalam Kurikulum Merdeka. Berikut adalah koleksi yang dipilih.'
+      },
+      'btn-atp': {
+        en: 'ATP',
+        id: 'ATP'
+      },
+      'btn-foreign-audio': {
+        en: 'Foreign Audio',
+        id: 'Audio Asing'
+      },
+      'btn-answer-key': {
+        en: 'Answer Key',
+        id: 'Kunci Jawaban'
+      },
+      'btn-listening-script': {
+        en: 'Listening Script',
+        id: 'Skrip Mendengarkan'
+      },
+      'btn-teaching-media': {
+        en: 'Teaching Media',
+        id: 'Media Pengajaran'
+      },
+      'btn-teaching-module': {
+        en: 'Teaching Module',
+        id: 'Modul Pengajaran'
+      },
+      'btn-foreign-video': {
+        en: 'Foreign Language Video',
+        id: 'Video Bahasa Asing'
+      }
+    };
+
+    // Set default language to English on page load
+    document.querySelectorAll('[data-translate]').forEach(element => {
+      const key = element.getAttribute('data-translate');
+      if (translations[key]) {
+        element.innerHTML = translations[key].en;
+      }
+    });
+
+    // Toggle functionality
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        const targetId = header.getAttribute('data-target');
+        const targetContent = document.getElementById(targetId);
+
+        // Close other contents
+        contents.forEach(c => {
+          if (c !== targetContent) c.classList.remove('active');
+        });
+
+        // Toggle clicked content
+        if (targetContent.classList.contains('active')) {
+          targetContent.classList.remove('active');
+          activeContent = null;
+        } else {
+          targetContent.classList.add('active');
+          activeContent = targetContent;
+
+          // Auto close after 10 seconds if not hovered
+          clearTimeout(autoCloseTimeout);
+          autoCloseTimeout = setTimeout(() => {
+            if (activeContent && !activeContent.matches(':hover')) {
+              activeContent.classList.remove('active');
+              activeContent = null;
+            }
+          }, 10000);
+        }
+      });
+    });
+
+    // Reset timer on hover
+    contents.forEach(content => {
+      content.addEventListener('mouseenter', () => {
+        clearTimeout(autoCloseTimeout);
+      });
+      content.addEventListener('mouseleave', () => {
+        clearTimeout(autoCloseTimeout);
+        if (content.classList.contains('active')) {
+          autoCloseTimeout = setTimeout(() => {
+            content.classList.remove('active');
+            activeContent = null;
+          }, 10000);
+        }
+      });
+    });
+
+    // Translation function
+    translateBtn.addEventListener('click', () => {
+      isEnglish = !isEnglish; // Toggle language
+      const lang = isEnglish ? 'en' : 'id';
+
+      // Translate all elements with data-translate attribute
+      document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[key]) {
+          element.innerHTML = translations[key][lang];
+        }
+      });
+    });
+  </script>
+</body>
+</html>

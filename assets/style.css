@@ -1,0 +1,936 @@
+/* =========================================================
+   Engdelve Archive — Global Stylesheet
+   Author: Ahmad Zaman Huri
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. FONT — Geist (self-host)
+   --------------------------------------------------------- */
+@font-face {
+  font-family: 'Geist';
+  src: url('fonts/Geist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('fonts/Geist-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('fonts/Geist-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------------------------------------------------
+   2. DESIGN TOKENS
+   --------------------------------------------------------- */
+:root {
+  /* Color — neutral base */
+  --bg:            #f4f7f5;
+  --bg-alt:        #eef2ef;
+  --surface:       #ffffff;
+  --border:        #dde4df;
+  --border-strong: #c7d2cb;
+
+  /* Color — sage (identity) */
+  --sage-50:  #f0f4f1;
+  --sage-100: #d5e4d9;
+  --sage-200: #b8cdbf;
+  --sage-400: #88a097;
+  --sage-500: #647c74;
+  --sage-600: #4e625c;
+  --sage-700: #3d4f4a;
+  --sage-900: #1f2a27;
+
+  /* Color — text */
+  --text:        #1f2a27;
+  --text-muted:  #5a6b66;
+  --text-subtle: #8a9a94;
+
+  /* Typography */
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* Layout */
+  --container:   1140px;
+  --container-narrow: 760px;
+  --radius-sm:   6px;
+  --radius:      10px;
+  --radius-lg:   16px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur:  0.35s;
+}
+
+/* ---------------------------------------------------------
+   3. RESET
+   --------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+/* ---------------------------------------------------------
+   4. LAYOUT
+   --------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+/* ---------------------------------------------------------
+   5. HEADER
+   --------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(244, 247, 245, 0.85);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  gap: var(--space-5);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.brand-mark {
+  width: 10px;
+  height: 10px;
+  background: var(--sage-500);
+  border-radius: 2px;
+  display: inline-block;
+  transform: rotate(45deg);
+  transition: transform var(--dur) var(--ease);
+}
+
+.brand:hover .brand-mark {
+  transform: rotate(135deg);
+}
+
+.brand-name {
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.site-nav {
+  display: none;
+  gap: var(--space-6);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.site-nav a {
+  transition: color var(--dur) var(--ease);
+}
+
+.site-nav a:hover {
+  color: var(--sage-600);
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  transition: all var(--dur) var(--ease);
+}
+
+.lang-toggle:hover {
+  border-color: var(--sage-500);
+  color: var(--sage-600);
+}
+
+.lang-current {
+  color: var(--text);
+}
+
+.lang-divider {
+  opacity: 0.4;
+}
+
+.lang-alt {
+  opacity: 0.55;
+}
+
+/* ---------------------------------------------------------
+   6. HERO
+   --------------------------------------------------------- */
+.hero {
+  padding: var(--space-9) 0 var(--space-8);
+}
+
+.hero-inner {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+}
+
+.hero-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage-500);
+  font-weight: 500;
+  margin: 0 0 var(--space-5);
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5.5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 var(--space-5);
+}
+
+.hero-lede {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-6);
+  max-width: 60ch;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* ---------------------------------------------------------
+   7. BUTTONS
+   --------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  transition: all var(--dur) var(--ease);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--sage-500);
+  color: #fff;
+  border-color: var(--sage-500);
+}
+
+.btn-primary:hover {
+  background: var(--sage-600);
+  border-color: var(--sage-600);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.btn-ghost:hover {
+  border-color: var(--sage-500);
+  color: var(--sage-600);
+}
+
+/* ---------------------------------------------------------
+   8. SECTION HEADERS
+   --------------------------------------------------------- */
+.section-head {
+  max-width: var(--container-narrow);
+  margin: 0 auto var(--space-7);
+}
+
+.section-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage-500);
+  font-weight: 500;
+  margin: 0 0 var(--space-4);
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 var(--space-4);
+}
+
+.section-lede {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ---------------------------------------------------------
+   9. COLLECTION
+   --------------------------------------------------------- */
+.collection {
+  padding: var(--space-8) 0;
+  border-top: 1px solid var(--border);
+}
+
+.grade-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.grade-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--dur) var(--ease);
+}
+
+.grade-card:hover {
+  border-color: var(--sage-400);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -20px rgba(31, 42, 39, 0.15);
+}
+
+.grade-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.grade-number {
+  font-size: 1.1rem;
+  color: var(--text-subtle);
+  margin: 0;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.grade-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 0;
+}
+
+.grade-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-5);
+}
+
+.grade-curricula {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.grade-curricula li {
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  background: var(--sage-50);
+}
+
+.grade-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--sage-600);
+  margin-top: auto;
+  transition: gap var(--dur) var(--ease);
+}
+
+.grade-link .arrow {
+  transition: transform var(--dur) var(--ease);
+}
+
+.grade-link:hover {
+  color: var(--sage-700);
+}
+
+.grade-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ---------------------------------------------------------
+   10. QUOTE
+   --------------------------------------------------------- */
+.quote-section {
+  padding: var(--space-8) 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-alt);
+}
+
+.quote {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  text-align: center;
+  padding: 0;
+}
+
+.quote p {
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 var(--space-4);
+}
+
+.quote cite {
+  font-style: normal;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage-500);
+}
+
+/* ---------------------------------------------------------
+   11. ABOUT
+   --------------------------------------------------------- */
+.about {
+  padding: var(--space-9) 0;
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-7);
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+}
+
+.about-text .section-title {
+  margin-bottom: var(--space-5);
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-4);
+}
+
+.about-signature {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--sage-600) !important;
+  margin-top: var(--space-5) !important;
+}
+
+.about-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.meta-item {
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.meta-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.meta-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin: 0 0 var(--space-2);
+  font-weight: 500;
+}
+
+.meta-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ---------------------------------------------------------
+   12. FOOTER
+   --------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: var(--space-7) 0 var(--space-6);
+  background: var(--bg-alt);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.footer-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 var(--space-2);
+}
+
+.footer-tagline {
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin: 0;
+}
+
+.footer-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin: 0 0 var(--space-2);
+  font-weight: 500;
+}
+
+.footer-link {
+  font-size: 0.92rem;
+  color: var(--sage-600);
+  transition: color var(--dur) var(--ease);
+  word-break: break-all;
+}
+
+.footer-link:hover {
+  color: var(--sage-700);
+  text-decoration: underline;
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: 0.82rem;
+  color: var(--text-subtle);
+}
+
+.footer-meta p {
+  margin: 0;
+}
+
+/* ---------------------------------------------------------
+   13. RESPONSIVE
+   --------------------------------------------------------- */
+@media (min-width: 640px) {
+  .grade-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-inner {
+    grid-template-columns: 1.5fr 1fr;
+    align-items: start;
+  }
+
+  .footer-meta {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--border);
+    margin-top: var(--space-4);
+  }
+
+  .curriculum-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 880px) {
+  .site-nav {
+    display: flex;
+  }
+
+  .about-inner {
+    grid-template-columns: 1.6fr 1fr;
+    align-items: start;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  .footer-meta {
+    grid-column: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 0;
+    border-top: none;
+    margin-top: 0;
+    text-align: right;
+  }
+
+  .curriculum-grid {
+    gap: var(--space-6);
+  }
+
+  .resource-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------------------------------------------------------
+   14. REDUCED MOTION
+   --------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================
+   15. CURRICULUM PAGES (Grade 8 & 9)
+   ========================================================= */
+
+/* ----- Page header ----- */
+.page-header {
+  padding: var(--space-8) 0 var(--space-6);
+}
+
+.page-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-5);
+  transition: color var(--dur) var(--ease);
+}
+
+.page-back:hover {
+  color: var(--sage-600);
+}
+
+.page-back .arrow {
+  transition: transform var(--dur) var(--ease);
+}
+
+.page-back:hover .arrow {
+  transform: translateX(-4px);
+}
+
+.page-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage-500);
+  font-weight: 500;
+  margin: 0 0 var(--space-4);
+}
+
+.page-title {
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 var(--space-4);
+}
+
+.page-lede {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 60ch;
+}
+
+/* ----- Curriculum cards (di Grade8/index.html) ----- */
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  padding: var(--space-6) 0 var(--space-8);
+}
+
+.curriculum-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--dur) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.curriculum-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent, var(--sage-500));
+  opacity: 0.9;
+}
+
+.curriculum-card:hover {
+  border-color: var(--accent, var(--sage-400));
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -20px rgba(31, 42, 39, 0.15);
+}
+
+.curriculum-code {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent, var(--sage-500));
+  font-weight: 500;
+  margin: 0 0 var(--space-3);
+}
+
+.curriculum-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 0 0 var(--space-3);
+}
+
+.curriculum-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-5);
+  flex: 1;
+}
+
+.curriculum-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--accent, var(--sage-600));
+  margin-top: auto;
+  transition: gap var(--dur) var(--ease);
+}
+
+.curriculum-link .arrow {
+  transition: transform var(--dur) var(--ease);
+}
+
+.curriculum-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ----- Accent colors per curriculum ----- */
+.accent-k13n  { --accent: #2f6f7d; }
+.accent-km    { --accent: #a12b2b; }
+.accent-kmr   { --accent: #5b2c83; }
+.accent-cefr  { --accent: #1e4a6c; }
+
+/* ----- Book sections (di dalam halaman kurikulum) ----- */
+.book-section {
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--border);
+}
+
+.book-section:first-of-type {
+  border-top: none;
+}
+
+.book-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.book-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 0;
+}
+
+.book-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent, var(--sage-500));
+  font-weight: 500;
+}
+
+/* ----- Resource links ----- */
+.resource-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.resource-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all var(--dur) var(--ease);
+  text-decoration: none;
+  color: inherit;
+}
+
+.resource-link:hover {
+  border-color: var(--accent, var(--sage-400));
+  transform: translateX(4px);
+  box-shadow: 0 8px 20px -12px rgba(31, 42, 39, 0.2);
+}
+
+.resource-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.resource-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.resource-meta {
+  font-size: 0.78rem;
+  color: var(--text-subtle);
+}
+
+.resource-arrow {
+  color: var(--accent, var(--sage-500));
+  font-size: 1.1rem;
+  transition: transform var(--dur) var(--ease);
+  flex-shrink: 0;
+}
+
+.resource-link:hover .resource-arrow {
+  transform: translateX(4px);
+}
+
+/* ----- Empty state ----- */
+.empty-state {
+  padding: var(--space-7) var(--space-5);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--sage-50);
+}

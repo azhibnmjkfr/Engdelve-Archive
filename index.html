@@ -1,186 +1,218 @@
+<!DOCTYPE html>
 <!-- 
-  Engdelve Archive Homepage
+  Engdelve Archive — Homepage
   Design & Development: Ahmad Zaman Huri
   Contact: ahmadzamanhuri.jakfar@gmail.com
 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Engdelve Archive — A growing collection of English teaching resources for SMP/MTs. Simple, open, and free to use.">
+  <meta name="author" content="Ahmad Zaman Huri">
+  <meta name="theme-color" content="#647c74">
 
-<link href="https://fonts.googleapis.com/css2?family=Droid+Sans&display=swap" rel="stylesheet">
+  <title>Engdelve Archive — English Teaching Resources</title>
 
-<div class="engdelve-archive">
-  <h1>📚 Engdelve Archive</h1>
-  <p class="intro">
-    A growing collection of English teaching resources — simple, open, and free to use.  
-    Choose your grade below and start exploring.
-  </p>
+  <!-- Fonts (self-host) -->
+  <link rel="preload" href="assets/fonts/Geist-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Geist-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
 
-  <div class="class-links">
-    <a href="Grade8/index.html" class="btn">📘 Explore Grade 8</a>
-    <a href="Grade9/index.html" class="btn">📗 Explore Grade 9</a>
-  </div>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
 
-  <div class="note">
-    <p><b>Note:</b> If you encounter broken files or links, please report them through the contact section.</p>
-  </div>
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Engdelve Archive home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Engdelve</span>
+      </a>
 
-  <blockquote class="quote">
-    "Knowledge grows when it is shared." 🌱
-  </blockquote>
-</div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#collection">Collection</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-<!-- Footer -->
-<footer class="footer">
-  <p>© 2025 <b>Engdelve</b>. English Deeper • Deliver Better</p>
-  <p class="author">Ahmad Zaman Huri</p>
-</footer>
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+        <span class="lang-current">EN</span>
+        <span class="lang-divider" aria-hidden="true">/</span>
+        <span class="lang-alt">ID</span>
+      </button>
+    </div>
+  </header>
 
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/62XXXXXXXXXX?text=Hi,%20I%20found%20a%20broken%20file%20or%20link%20on%20Engdelve%20Archive.%20Details:" 
-   class="wa-float" target="_blank">
-   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
+  <!-- ============ HERO ============ -->
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="hero-eyebrow" data-en="English Teaching Archive" data-id="Arsip Pengajaran Bahasa Inggris">
+          English Teaching Archive
+        </p>
 
-<style>
-  /* Engdelve Archive Style */
-  body {
-    background: #d5e4d9;
-  }
+        <h1 class="hero-title" data-en="A quiet library for English teachers." data-id="Perpustakaan tenang untuk guru bahasa Inggris.">
+          A quiet library for English teachers.
+        </h1>
 
-  .engdelve-archive {
-    font-family: 'Droid Sans', sans-serif;
-    color: #2c2c2c;
-    max-width: 850px;
-    margin: auto;
-    padding: 25px;
-    line-height: 1.6;
-    text-align: center;
-  }
+        <p class="hero-lede" data-en="A growing collection of resources — simple, open, and free to use. Curated for SMP/MTs, aligned with national curricula and international standards." data-id="Koleksi sumber belajar yang terus bertumbuh — sederhana, terbuka, dan gratis. Dikurasi untuk SMP/MTs, selaras dengan kurikulum nasional dan standar internasional.">
+          A growing collection of resources — simple, open, and free to use.
+          Curated for SMP/MTs, aligned with national curricula and international standards.
+        </p>
 
-  .engdelve-archive h1 {
-    color: #647c74;
-    margin-bottom: 15px;
-    font-size: 2em;
-  }
+        <div class="hero-actions">
+          <a href="#collection" class="btn btn-primary" data-en="Browse the collection" data-id="Jelajahi koleksi">
+            Browse the collection
+          </a>
+          <a href="#about" class="btn btn-ghost" data-en="Learn more" data-id="Pelajari lebih lanjut">
+            Learn more
+          </a>
+        </div>
+      </div>
+    </section>
 
-  .engdelve-archive .intro {
-    font-size: 1.05em;
-    margin-bottom: 25px;
-  }
+    <!-- ============ COLLECTION ============ -->
+    <section class="collection" id="collection">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-eyebrow" data-en="The Collection" data-id="Koleksi">The Collection</p>
+          <h2 class="section-title" data-en="Choose a grade to begin." data-id="Pilih kelas untuk memulai.">
+            Choose a grade to begin.
+          </h2>
+          <p class="section-lede" data-en="Each grade is organised by curriculum, with downloadable resources for every book series." data-id="Setiap kelas disusun berdasarkan kurikulum, dengan sumber daya yang dapat diunduh untuk setiap seri buku.">
+            Each grade is organised by curriculum, with downloadable resources for every book series.
+          </p>
+        </header>
 
-  .engdelve-archive .class-links {
-    margin: 25px 0;
-  }
+        <div class="grade-grid">
 
-  .engdelve-archive .btn {
-    display: inline-block;
-    margin: 12px;
-    padding: 14px 28px;
-    background: #647c74;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 10px;
-    font-size: 1.05em;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    animation: pulse 2s infinite;
-  }
+          <!-- Grade 8 -->
+          <article class="grade-card">
+            <div class="grade-card-head">
+              <p class="grade-number">08</p>
+              <h3 class="grade-title" data-en="Grade 8" data-id="Kelas 8">Grade 8</h3>
+            </div>
 
-  /* Pulse effect */
-  @keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 rgba(100,124,116,0.4); }
-    50% { transform: scale(1.03); box-shadow: 0 0 20px rgba(100,124,116,0.6); }
-    100% { transform: scale(1); box-shadow: 0 0 0 rgba(100,124,116,0.4); }
-  }
+            <p class="grade-desc" data-en="Foundation year. Four curricula, each with its own character and focus." data-id="Tahun fondasi. Empat kurikulum, masing-masing dengan karakter dan fokusnya sendiri.">
+              Foundation year. Four curricula, each with its own character and focus.
+            </p>
 
-  .engdelve-archive .btn:hover {
-    animation: none; /* stop pulse on hover */
-    background: linear-gradient(135deg, #647c74, #88a097);
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-  }
+            <ul class="grade-curricula" aria-label="Available curricula">
+              <li>K13N</li>
+              <li>Kurikulum Merdeka</li>
+              <li>KM Revisi</li>
+              <li>Standard CEFR</li>
+            </ul>
 
-  .engdelve-archive .note {
-    background: #c6d8cc;
-    border-left: 5px solid #647c74;
-    padding: 12px 15px;
-    font-size: 0.95em;
-    margin: 25px auto;
-    max-width: 600px;
-    border-radius: 6px;
-    text-align: left;
-  }
+            <a href="Grade8/index.html" class="grade-link">
+              <span data-en="Explore Grade 8" data-id="Jelajahi Kelas 8">Explore Grade 8</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </article>
 
-  .engdelve-archive .quote {
-    margin-top: 25px;
-    font-style: italic;
-    color: #4e625c;
-    font-size: 1em;
-  }
+          <!-- Grade 9 -->
+          <article class="grade-card">
+            <div class="grade-card-head">
+              <p class="grade-number">09</p>
+              <h3 class="grade-title" data-en="Grade 9" data-id="Kelas 9">Grade 9</h3>
+            </div>
 
-  /* Footer */
-  .footer {
-    text-align: center;
-    margin-top: 35px;
-    padding: 15px 10px;
-    font-size: 0.95em;
-    color: #444;
-    border-top: 1px solid #bbb;
-  }
+            <p class="grade-desc" data-en="Final year. The same four curricula, refined and extended for exam readiness." data-id="Tahun akhir. Empat kurikulum yang sama, disempurnakan dan diperluas untuk kesiapan ujian.">
+              Final year. The same four curricula, refined and extended for exam readiness.
+            </p>
 
-  .footer b {
-    color: #647c74;
-  }
+            <ul class="grade-curricula" aria-label="Available curricula">
+              <li>K13N</li>
+              <li>Kurikulum Merdeka</li>
+              <li>KM Revisi</li>
+              <li>Standard CEFR</li>
+            </ul>
 
-  .footer .author {
-    color: #647c74;
-    opacity: 0.5;
-    margin-top: 5px;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease;
-  }
+            <a href="Grade9/index.html" class="grade-link">
+              <span data-en="Explore Grade 9" data-id="Jelajahi Kelas 9">Explore Grade 9</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </article>
 
-  .footer .author:hover {
-    opacity: 1;
-  }
+        </div>
+      </div>
+    </section>
 
-  /* Floating WhatsApp button */
-  .wa-float {
-    position: fixed;
-    width: 55px;
-    height: 55px;
-    bottom: 20px;
-    right: 20px;
-    background: #25d366;
-    border-radius: 50%;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease;
-  }
+    <!-- ============ QUOTE ============ -->
+    <section class="quote-section">
+      <div class="container">
+        <blockquote class="quote">
+          <p data-en="Knowledge grows when it is shared." data-id="Pengetahuan bertumbuh ketika dibagikan.">
+            Knowledge grows when it is shared.
+          </p>
+          <cite>Engdelve</cite>
+        </blockquote>
+      </div>
+    </section>
 
-  .wa-float:hover {
-    transform: scale(1.1);
-  }
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about">
+      <div class="container about-inner">
+        <div class="about-text">
+          <p class="section-eyebrow" data-en="About" data-id="Tentang">About</p>
+          <h2 class="section-title" data-en="Built for teachers, by a teacher." data-id="Dibuat untuk guru, oleh seorang guru.">
+            Built for teachers, by a teacher.
+          </h2>
+          <p data-en="Engdelve Archive began as a personal collection of English teaching materials — a place to keep resources organised and accessible. It is shared openly in the hope that it saves other teachers time, and helps students learn a little better." data-id="Engdelve Archive berawal dari koleksi pribadi materi pengajaran bahasa Inggris — tempat untuk menjaga sumber daya tetap teratur dan mudah diakses. Dibagikan secara terbuka dengan harapan dapat menghemat waktu guru lain, dan membantu siswa belajar lebih baik.">
+            Engdelve Archive began as a personal collection of English teaching materials —
+            a place to keep resources organised and accessible. It is shared openly in the hope
+            that it saves other teachers time, and helps students learn a little better.
+          </p>
+          <p class="about-signature">— Ahmad Zaman Huri</p>
+        </div>
 
-  .wa-float img {
-    width: 28px;
-    height: 28px;
-  }
+        <aside class="about-meta">
+          <div class="meta-item">
+            <p class="meta-label" data-en="Curricula" data-id="Kurikulum">Curricula</p>
+            <p class="meta-value">K13N · KM · KMR · CEFR</p>
+          </div>
+          <div class="meta-item">
+            <p class="meta-label" data-en="Level" data-id="Tingkat">Level</p>
+            <p class="meta-value">SMP / MTs</p>
+          </div>
+          <div class="meta-item">
+            <p class="meta-label" data-en="License" data-id="Lisensi">License</p>
+            <p class="meta-value" data-en="Free to use" data-id="Gratis digunakan">Free to use</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
 
-  /* Responsiveness */
-  @media (max-width: 600px) {
-    .engdelve-archive h1 {
-      font-size: 1.6em;
-    }
-    .engdelve-archive .btn {
-      width: 90%;
-      margin: 10px auto;
-      display: block;
-    }
-  }
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-name">Engdelve</p>
+        <p class="footer-tagline" data-en="English Deeper · Deliver Better" data-id="English Deeper · Deliver Better">
+          English Deeper · Deliver Better
+        </p>
+      </div>
 
-</style>
+      <div class="footer-contact">
+        <p class="footer-label" data-en="Report a broken link" data-id="Laporkan tautan rusak">Report a broken link</p>
+        <a href="mailto:ahmadzamanhuri.jakfar@gmail.com" class="footer-link">
+          ahmadzamanhuri.jakfar@gmail.com
+        </a>
+      </div>
 
+      <div class="footer-meta">
+        <p>© 2025 Engdelve Archive</p>
+        <p data-en="Designed by Ahmad Zaman Huri" data-id="Dirancang oleh Ahmad Zaman Huri">
+          Designed by Ahmad Zaman Huri
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/script.js" defer></script>
+</body>
+</html>
